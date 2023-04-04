@@ -1,0 +1,9 @@
+$white: #fff;
+
+.name{
+    color: $white;
+    display: flex;
+    justify-content: end;
+    padding: 1rem;
+    font-size: 2rem;
+}

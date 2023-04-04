@@ -1,0 +1,23 @@
+import './Weather.scss';
+
+
+const Weather = (props) =>{
+ const { weather } = props
+    return (
+       <div>
+        <article class="widget">
+            <div class="weatherIcon"><i class="wi wi-day-cloudy"></i></div>
+            <div class="weatherInfo">
+                <div class="temperature"><span>25&deg;</span></div>
+                <div class="description">    
+                <div class="weatherCondition">CLOUDY</div>    
+                <div class="place">New York, New York</div>
+                </div>
+            </div>
+            <div class="date">1st Jan</div>
+            </article>
+       </div>
+    )
+}
+
+export default Weather
