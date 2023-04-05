@@ -4,6 +4,8 @@ import axios from 'axios';
 import { ThreeDots } from  'react-loader-spinner'
 
 
+
+
 const News = () =>{
     const [news, setNews] = useState()
     const [articles, setArticles] = useState([])
@@ -44,19 +46,21 @@ const News = () =>{
     )
   }
 
+
+
+
     return (
       <div className="news-card">
-        <main className="leaderboard__profiles">
-            {
-              articles.map((article, index) => (
-                <article key={index} className="leaderboard__profile">
-                <span className="leaderboard__value">{article?.author}</span>
-                <span className="leaderboard__name">{article?.title}</span>
-              </article>
-              ))
-            }
-        </main>
-
+         <main className="leaderboard__profiles">
+         {
+           articles.map((article, index) => (
+             <div key={index} className="card">
+                 <h2>{article?.author}</h2>
+                 <p>{article?.title}</p>
+             </div>
+           ))
+         }
+       </main>
      </div>
     )
 }
