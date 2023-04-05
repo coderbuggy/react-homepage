@@ -1,9 +1,12 @@
 import './News.scss';
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import { ThreeDots } from  'react-loader-spinner'
+
 
 const News = () =>{
     const [news, setNews] = useState()
+    const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(false);
 
     const getNewsData = async () => {
@@ -14,6 +17,7 @@ const News = () =>{
             const { data } = await axios.get(`https://newsapi.org/v2/top-headlines?country=tr&apiKey=${NEWS_API_KEY}`)
             setNews(data)
             console.log(data);
+            setArticles(data.articles)
         } catch (error) {
             alert(error)
         }
@@ -27,26 +31,31 @@ const News = () =>{
 
   if (isLoading) {
     return (
-      <span>Loading...</span>
+      <ThreeDots 
+      height="80" 
+      width="80" 
+      radius="9"
+      color="#fff" 
+      ariaLabel="three-dots-loading"
+      wrapperStyle={{}}
+      wrapperClassName=""
+      visible={true}
+      />
     )
   }
 
     return (
       <div className="news-card">
-
-  
-      <main class="leaderboard__profiles">
-        <article class="leaderboard__profile">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark Zuckerberg" class="leaderboard__picture"/>
-          <span class="leaderboard__name">Mark Zuckerberg</span>
-          <span class="leaderboard__value">35.7<span>B</span></span>
-        </article>
-        <article class="leaderboard__profile">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark Zuckerberg" class="leaderboard__picture"/>
-          <span class="leaderboard__name">Mark Zuckerberg</span>
-          <span class="leaderboard__value">35.7<span>B</span></span>
-        </article>
-      </main>
+        <main className="leaderboard__profiles">
+            {
+              articles.map((article, index) => (
+                <article key={index} className="leaderboard__profile">
+                <span className="leaderboard__value">{article?.author}</span>
+                <span className="leaderboard__name">{article?.title}</span>
+              </article>
+              ))
+            }
+        </main>
 
      </div>
     )

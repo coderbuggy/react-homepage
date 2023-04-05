@@ -1,5 +1,6 @@
 import './Exchange.scss';
 import { useState, useEffect } from 'react'
+import { ThreeDots } from  'react-loader-spinner'
 
 const Exchange = () =>{
   const [exchangeRateEUR, setExchangeEURRate] = useState()
@@ -21,7 +22,7 @@ const Exchange = () =>{
     const dataEUR = await responseEUR.json()
     const responseDollar = await fetch("https://api.apilayer.com/exchangerates_data/convert?to=TRY&from=USD&amount=1", requestOptions)
     const dataUSD = await responseDollar.json()
-    console.log(dataEUR, dataUSD)
+    // console.log(dataEUR, dataUSD)
     setExchangeEURRate(dataEUR)
     setExchangeUSDRate(dataUSD)
     setIsLoading(false)
@@ -34,7 +35,16 @@ const Exchange = () =>{
 
   if (isLoading) {
     return (
-      <span>Loading...</span>
+    <ThreeDots 
+    height="80" 
+    width="80" 
+    radius="9"
+    color="#fff" 
+    ariaLabel="three-dots-loading"
+    wrapperStyle={{}}
+    wrapperClassName=""
+    visible={true}
+    />
     )
   }
 

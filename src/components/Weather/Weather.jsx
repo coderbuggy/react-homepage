@@ -11,11 +11,11 @@ const Weather = () =>{
       const WEATHER_API_KEY = '13549384bec5775962d571bc256b6eba'  
       setIsLoading(true)
       try {
-          console.log("Start Fetching...");
+          // console.log("Start Fetching...");
           const { data } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=40.98679691289183&lon=29.118886262192845&appid=${WEATHER_API_KEY}&lang=tr`)
           setWeather(data)
           setIsLoading(false)
-          console.log(data);
+          // console.log(data);
       } catch (error) {
           alert('Hata!')
       }
