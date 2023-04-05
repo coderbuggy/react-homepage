@@ -34,6 +34,20 @@ const News = () =>{
     return (
       <div className="news-card">
 
+  
+      <main class="leaderboard__profiles">
+        <article class="leaderboard__profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark Zuckerberg" class="leaderboard__picture"/>
+          <span class="leaderboard__name">Mark Zuckerberg</span>
+          <span class="leaderboard__value">35.7<span>B</span></span>
+        </article>
+        <article class="leaderboard__profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark Zuckerberg" class="leaderboard__picture"/>
+          <span class="leaderboard__name">Mark Zuckerberg</span>
+          <span class="leaderboard__value">35.7<span>B</span></span>
+        </article>
+      </main>
+
      </div>
     )
 }

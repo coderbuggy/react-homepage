@@ -33,8 +33,10 @@ const Weather = () =>{
     return (
     <div>
       <div className="weather-card">
-        <h2>{weather?.name}</h2>
-        <h3>{weather?.weather[0].description}</h3>
+        <h2>{weather?.name} / İstanbul</h2>
+        <img width={80} height={80} src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}.png`} alt="icon" />
+        <h4>{weather?.weather[0].description}</h4>
+        <h1>{Math.round(weather?.main.temp - 273.15)}&deg;C</h1>
       </div>
     </div>
     )

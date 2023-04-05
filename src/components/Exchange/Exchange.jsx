@@ -40,8 +40,8 @@ const Exchange = () =>{
 
     return (
       <div className="exchange-card">
-        <h2><strong>EURO</strong> {exchangeRateUSD?.result} ₺</h2>
-        <h2><strong>DOLAR</strong> {exchangeRateEUR?.result} ₺</h2>
+        <h2><strong>EURO - </strong> {exchangeRateUSD?.result} ₺</h2>
+        <h2><strong>DOLAR - </strong> {exchangeRateEUR?.result} ₺</h2>
      </div>
     )
 }

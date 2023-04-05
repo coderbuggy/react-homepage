@@ -23,12 +23,15 @@
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
   align-content: center;
+  width: 100%;
 
 }
 
+.flex-items{
+  padding: 1rem;
+}
 
 .flex-items:nth-child(1) {
   display: block;
@@ -46,13 +49,18 @@
   flex-basis: auto;
   align-self: auto;
   order: 0;
+
+  .weather{
+    margin-top: 1rem;
+  }
 }
 
-.flex-items:nth-child(3) {
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-  order: 0;
-}
+
+// .flex-items:nth-child(3) {
+//   display: block;
+//   flex-grow: 0;
+//   flex-shrink: 1;
+//   flex-basis: auto;
+//   align-self: auto;
+//   order: 0;
+// }

@@ -19,13 +19,15 @@ function App() {
       </div>
       <div className="flex-container">
         <div className="flex-items">
-          <Weather></Weather>
+          <News></News>
         </div>
         <div className="flex-items">
-          <Exchange></Exchange>
-        </div>
-        <div className="flex-items">
-          {/* <News></News> */}
+          <div className="exchange">
+            <Exchange></Exchange>
+          </div>
+          <div className="weather">
+            <Weather></Weather>
+          </div>
         </div>
       </div>
     </div>
