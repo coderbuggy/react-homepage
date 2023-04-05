@@ -1,0 +1,1 @@
+- UseEffect 2 kere veriyi çekiyor,neden?
